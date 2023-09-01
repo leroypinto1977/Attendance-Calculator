@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+  
+  
+  <title>EezyToken</title>
+  <link rel="icon" type="image/x-icon" href="https://www.linkpicture.com/q/android-chrome-512x512_9.png">
+
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/9fc5533e80.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+  <!-- CSS Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="css/styles.css"> -->
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  
+</head>
+<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #F3EFE0;
+      font-family: 'Poppins',sans-serif;
+      min-height: 100vh;
+    }
+    
+    html {
+      background-color: #F3EFE0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    
+    .navbar-custom-bg {
+      background-color: #0F3460;
+    }
+    
+    .navbar-custom-txt {
+      --bs-navbar-color: rgba(255, 255, 255, 0.55);
+      --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
+      --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
+      --bs-navbar-active-color: #fff;
+      --bs-navbar-brand-color: #B2B2B2;
+      --bs-navbar-brand-hover-color: #fff;
+      --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
+      --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    
+    .navbar {
+      padding: 15px 15px 15px 60px !important;
+    }
+
+    {% comment %} .logo-div {
+      height: 70px;
+      width: 70px;
+      position: absolute;
+      left: 0;
+      background-color: #f8f9fa;
+    } {% endcomment %}
+    
+    {% comment %} .logo-img {
+      padding: 5px;
+      height: 70px;
+      width: 70px;
+    } {% endcomment %}
+    
+    {% comment %} .navbar-link {
+      display: block;
+      padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+      font-size: var(--bs-nav-link-font-size);
+      font-weight: var(--bs-nav-link-font-weight);
+      color: #B2B2B2;
+      text-decoration: none;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+      margin: 0 20px;
+    } {% endcomment %}
+    .navbar-logout {
+      display: block;
+      padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+      font-size: var(--bs-nav-link-font-size);
+      font-weight: var(--bs-nav-link-font-weight);
+      color: #B2B2B2;
+      text-decoration: none;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+      margin: 0 25px;
+    }
+    
+    .navbar-brand {
+      margin-left: 15px;
+    }
+    
+    {% comment %} a.navbar-link:link, 
+    a.navbar-link:visited, 
+    a.navbar-logout:link, 
+    a.navbar-logout:hover {
+      color: #B2B2B2;
+    }
+    
+    a.navbar-link:hover, 
+    a.navbar-logout:hover {
+      color: #fff;
+    } {% endcomment %}
+    
+    {% comment %} .logout-button:link,
+    .logout-button:visited {
+      text-decoration: none;
+      color: white;
+    }
+
+    .logout-button:hover {
+      text-decoration: none;
+      color: black;
+    } {% endcomment %}
+
+    {% comment %} .token-search {
+      width: 200px;
+    }
+    
+    input.token-search {
+      background-color: #ffffff!important;
+      color: #3C4048!important;
+    } {% endcomment %}
+    
+    {% comment %} .form-control {
+      display: inline !important;
+    }
+
+    .form-control:focus {
+      color: #212529;
+      background-color: #fff;
+      border-color: #415c7c;
+      outline: 0;
+      box-shadow: 0 0 0 0.25rem rgb(60, 97, 142);
+    }
+     {% endcomment %}
+    .card-wrapper {
+      padding: 40px;
+      margin-right: 0;
+    }
+    
+    .card-img {
+      max-width: 90%;
+    }
+    
+    .card-img1 {
+      max-width: 80%;
+    }
+    
+    .card-img-top {
+      width: 60%;
+    }
+    
+    .card-img-top1 {
+      width: 70%;
+    }
+    
+    .card {
+      padding-top: 20px;
+      padding-bottom: 8px;
+      border-radius: 13px;
+      border-width: 2.5px;
+      border-color: #fff !important;
+    }
+    
+    .dropdown-toggle {
+      margin-bottom: 15px;
+    }
+    
+    .home-text-main {
+      display: block;
+      position: relative;
+      text-align: center;
+      margin-bottom: 50px;
+      margin-top: 50px;
+      {% comment %} left: 57px;
+      top: 25px; {% endcomment %}
+    }
+    
+    .dropdown-item {
+      text-align: center;
+    }
+    
+    .chicken-card {
+      {% comment %} background-color: #EA6C3D; {% endcomment %}
+      background-color: #A20F0F;
+    }
+    
+    .mutton-card {
+      {% comment %} background-color: #3DAEEA; {% endcomment %}
+      background-color: #116C9C;
+    }
+    
+    .gobi-card {
+      {% comment %} background-color: #5FEA3D; {% endcomment %}
+      background-color: #0FA259;
+    }
+    
+    .mushroom-card {
+      {% comment %} background-color: #DF7ABA; {% endcomment %}
+      background-color: #A20F75;
+    }
+    
+    .paneer-card {
+      {% comment %} background-color: #EADA3D; {% endcomment %}
+      background-color: #0D099D;
+      color: white;
+    }
+
+    .guest-card {
+      background-color: #D58211;
+    }
+
+    .form-select{
+      width: 65% !important;
+    }
+
+    .custom-btn,
+    .buy-button:link,
+    .buy-button:visited  {
+      background-color: #386AA7;
+      color: black;
+    }
+    
+    .custom-btn:hover {
+      background-color: #0F3460 !important;
+      text-decoration: none;
+      color: white !important;
+    }
+
+    .custom-btn-dark,
+    .custom-btn-dark:active {
+      background-color: #212529;
+      border-color: #212529;
+      color: #fff;
+    }
+
+    .custom-btn-dark:hover {
+      color: #fff;
+      background-color: #424649;
+      border-color: #373b3e;
+    }
+
+    .custom-btn-dark:active {
+      background-color : #212529 !important;
+      border-color: #373b3e;
+      color: #fff;
+    }
+
+    btn-dark {
+      --bs-btn-active-bg: #212529;
+      --bs-btn-active-border-color: #373b3e;
+    }
+
+    .token-cards:link,
+    .token-cards:visited  {
+      color: #fff;
+    }
+
+    .token-cards:hover {
+      color: #373b3e;
+    }
+
+    .card-header,
+    .card-footer {
+      color: white;
+    }
+
+    .table-wrapper {
+      margin-right: 0;
+      margin-left: 0;
+      margin-top: 10px;
+    }
+
+    th {
+      text-align: center;
+    }
+
+    td {
+      {% comment %} text-indent: 50px; {% endcomment %}
+      text-align: center;
+    }
+
+
+    .nav-outer {
+      width: 900px;
+      max-width: 1100px;
+      position: relative;
+      left: 50%;
+      top: 10px;
+      transform: translate(-50%,0);
+      background: #0F3460;
+      padding: 15px 15px;
+      border-radius: 17px;
+      z-index: 5;
+    }
+
+    nav.primary-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 60px;
+      background: #205495;
+      color: white;
+      padding: 0 25px;
+      width: 100%;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%,0);
+      border-radius: 12px;
+    }
+
+    .logo-div {
+      height: 60px;
+      width: 60px;
+      position: absolute;
+      left: 0;
+      background-color: #f8f9fa;
+      border-radius: 14px;
+    }
+    
+    .logo-img {
+      padding: 5px;
+      height: 60px;
+      width: 60px;
+    }
+
+    .navbar-link2 {
+      display: block;
+      padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+      font-size: var(--bs-nav-link-font-size);
+      font-weight: var(--bs-nav-link-font-weight);
+      color: #B2B2B2;
+      text-decoration: none;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    }
+
+    a.navbar-link:link, 
+    a.navbar-link:visited, 
+    a.navbar-logout:link, 
+    a.navbar-logout:hover {
+      color: #B2B2B2;
+    }
+    
+    a.navbar-link:hover, 
+    a.navbar-logout:hover {
+      color: #fff;
+    }
+
+    a.navbar-link2:link, 
+    a.navbar-link2:visited, 
+    a.navbar-logout:link, 
+    a.navbar-logout:hover {
+      color: #fff;
+    }
+    
+    a.navbar-link2:hover, 
+    a.navbar-logout:hover {
+      color: #fff;
+    }
+
+    .navbar-link2::after {
+      content: "";
+      display: inline-block;
+      height: 4px;
+      width: 105px;
+      opacity: 1;
+      position: absolute;
+      bottom: 15px;
+      left: 96px;
+      z-index: 0;
+      transition: all 1s;
+      /* background-image: linear-gradient(135deg, rgba(0,155,227,1) 20%, rgba(0,63,135,1) 80%); */
+      background-color: #f19819; 
+    }
+  
+    .navbar-link2:hover::after {
+      opacity: 1;
+      height: 4px;
+      width: 105px;
+    }
+
+    #logo {
+      font-size: 1.25rem;
+      margin: 0 0 0 70px;
+    }
+
+    .navbar-link {
+      position: relative;
+    }
+
+    .navbar-link::after {
+      content: "";
+      display: inline-block;
+      height: 15%;
+      width: 0;
+      /* border-radius: 10px; */
+      opacity: 0;
+      position: absolute;
+      bottom: -5px;
+      left: -1%;
+      z-index: 15;
+      transition: all 1s;
+      {% comment %} background-image: linear-gradient(10deg, rgba(213,11,11,1) 0%, rgba(213,131,11,1) 100%); {% endcomment %}
+      {% comment %} background-image: linear-gradient(135deg, rgba(0,155,227,1) 20%, rgba(0,63,135,1) 80%);
+      background-image: linear-gradient(135deg, hsla(160, 50%, 51%, 1) 20%, hsla(247, 60%, 21%, 1) 80%);
+  
+      background-image: -moz-linear-gradient(135deg, hsla(160, 50%, 51%, 1) 20%, hsla(247, 60%, 21%, 1) 80%);
+  
+      background-image: -webkit-linear-gradient(135deg, hsla(160, 50%, 51%, 1) 20%, hsla(247, 60%, 21%, 1) 80%); {% endcomment %}
+      background-color: rgba(213,131,11,1);
+    }
+  
+    .navbar-link:hover::after {
+      opacity: 1;
+      height: 15%;
+      width: 104%;
+    }
+
+    .navbar-link.active {
+      color: #fff;
+    }
+
+    #search_bar {
+      display: none;
+      margin-right: 5px;
+      height: 38px;
+      align-items: center;
+    }
+
+    .form-control {
+      display: inline !important;
+    }
+
+    .form-control:focus {
+      color: #212529;
+      background-color: #fff;
+      border-color: #415c7c;
+      outline: 0;
+      box-shadow: 0 0 0 0.25rem rgb(60, 97, 142);
+    }
+
+    .token-search {
+      width: 200px;
+    }
+    
+    input.token-search {
+      background-color: #ffffff!important;
+      color: #3C4048!important;
+    }
+
+    .search-btn-icn {
+      border-width: 0px;
+    }
+
+    .nav-search-icn {
+      height: 40.5px;
+      margin-right: -42px;
+    }
+
+    .logout-button:link,
+    .logout-button:visited {
+      text-decoration: none;
+      color: white;
+    }
+
+    .logout-button:hover {
+      text-decoration: none;
+      color: black;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links li {
+      padding: 0 22px;
+      font-size: 1.03rem;
+    }
+
+    .nav-link-active {
+      color: #fff !important;
+    }
+
+    .nav-link-active:after {
+      content: "";
+      display: inline-block;
+      height: 4px;
+      width: 100%;
+      opacity: 1;
+      position: absolute;
+      bottom: -20%;
+      left: -0.5%;
+      z-index: 0;
+      transition: all 1s;
+      background-image: linear-gradient(135deg, rgba(0,155,227,1) 20%, rgba(0,63,135,1) 80%);
+      {% comment %} background-color: #f19819;  {% endcomment %}
+    }
+
+    .shape4 {
+      position: fixed;
+      top: -16px;
+      left: 189px;
+      {% comment %} z-index: 2; {% endcomment %}
+    }
+  
+    .shape5 {
+      position: fixed;
+      top: 471px;
+      left: 59px;
+      {% comment %} z-index: 2; {% endcomment %}
+    }
+  
+    .big-lines2 {
+      background-color: #0F3460;
+      height: 800px;
+      width: 40px;
+      border-radius: 50px;
+      transform: rotate(55deg);
+      opacity: 0.8;
+    }
+  
+    .shape6 {
+      position: fixed;
+      top: 219px;
+      left: 841px;
+      height: 644px !important;
+      {% comment %} z-index: 2; {% endcomment %}
+    }
+  
+    .shape7 {
+      position: fixed;
+      top: 629px;
+      left: 460px;
+      height: 692px !important;
+      {% comment %} z-index: 2; {% endcomment %}
+    }
+  
+    .shape8 {
+      position: fixed;
+      top: -444px;
+      left: 67px;
+    }
+  
+    .shape9 {
+      position: fixed;
+      top: -126px;
+      left: 1422px;
+    }
+  
+    .shape10 {
+      position: fixed;
+      top: 297px;
+      left: 1516px;
+    }
+  
+    .shape11 {
+      position: fixed;
+      top: 61px;
+      left: 408px;
+    }
+  
+    .shape12 {
+      position: fixed;
+      top: 407px;
+      left: 1048px;
+    }
+  
+    .shape13 {
+      position: fixed;
+      top: -474px;
+      left: 1119px;
+      height: 1239px !important;
+    }
+  
+    .shape14 {
+      position: fixed;
+      top: 200px;
+      left: 1798px;
+      height: 1200px !important;
+    }
+
+    .big-lines {
+      background-color: #0F3460;
+      height: 800px;
+      width: 40px;
+      border-radius: 50px;
+      transform: rotate(55deg);
+      opacity: 0.8;
+      {% comment %} border-width: 5px;
+      border-color: #f09819;
+      border-style: solid; {% endcomment %}
+    }
+
+    .hero-con {
+      position: relative;
+      z-index: 3;
+    }
+    
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  </style>
+  
+  <div class="nav-outer">
+    <nav class="primary-nav">
+      <div class="logo-div">
+        <img class="logo-img" src='https://www.linkpicture.com/q/logo2_17.png' type='image'>
+      </div>
+      <h1 id="logo"><a class="navbar-link2" aria-current="page" href="/home">EezyToken</a></h1>
+      <ul class="nav-links">
+        <li><a class="navbar-link nav-link-active" aria-current="page" href="/attendance_calc">Attendance View</a></li>
+        <li><a class="navbar-link" href="/enter_attendance">Enter Attendance</a></li>
+      </ul>
+      <button id="logout-btn" class="btn btn-dark" type="button" href="/signout"><a class="logout-button" href="/signout">Logout</a></button>
+    </nav>
+  </div>
+  
+  <div class="hero-con">
+    
+    <div class="row"></div>
+    <div class="col-7 mx-auto">
+      <h3 class="home-text-main mx-auto">Current Attendance View</h3>
+      <div class="table-responsive custom-table">
+        <table class="table table-borderless">
+          <colgroup>
+            <col style="width: 50%;">
+            <col style="width: 50%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Courses</th>
+              <th>Percentage</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for course in courses %}
+            <tr>
+              <td>{{ course }}</td>
+              <td>{{ course.percentage }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <form action="course_details" method="post">
+        {% csrf_token %}
+        <div class="container">  
+        <center>  <h1> Student Registeration Form</h1> </center>  
+        <hr>  
+        <label> Firstname </label>   
+        <input type="text" name="firstname" placeholder= "Firstname" size="15" required />
+        <div>  
+        <label>   
+        Department :  
+        </label>
+          
+        <select id="course" name="course">
+          <option value="Department">Department</option>  
+          <option value="CSE">B.E. CSE</option>  
+          <option value="AIDS">B.Tech AI&DS</option>  
+          <option value="CSBS">B.Tech CS&BS</option>  
+          <option value="ECE">B.E. ECE</option>  
+          <option value="EEE">B.E. EEE</option>  
+          <option value="MECH">B.E. MECH</option>
+          <option value="CIVIL">B.E. CIVIL</option> 
+        </select>
+        </div>
+        <div>  
+
+        <label>Number of Subjects: </label>   
+        <input type="number" name="no_of_subs" placeholder="" size="15" required />
+        {% comment %} <input type="number" name="no.of.subjects" placeholder="10" size="10" onclick="createInputBoxes()" required> {% endcomment %}
+        
+        {% comment %} <input type="radio" value="Male" name="gender" checked > Male   
+        <input type="radio" value="Female" name="gender"> Female   
+        <input type="radio" value="Other" name="gender"> Other   {% endcomment %}
+          
+        </div>
+        <label>
+        {% comment %} Phone :  
+        </label>  
+        <input type="text" name="country code" placeholder="Country Code"  value="+91" size="2"/>   
+        <input type="text" name="phone" placeholder="phone no." size="10"/ required>   
+        Current Address :  
+        <textarea cols="80" rows="5" placeholder="Current Address" value="address" required>  
+        </textarea>  
+        <label for="email"><b>Email</b></label>  
+        <input type="text" placeholder="Enter Email" name="email" required>  
+        
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>  
+      
+        <label for="psw-repeat"><b>Re-type Password</b></label>  
+        <input type="password" placeholder="Retype Password" name="psw-repeat" required>   {% endcomment %}
+        <button type="submit" class="registerbtn">Register</button>    
+      </form>  
+    </div>
+   
+  </div>
+
+  {% comment %} <div class="big-lines shape4"></div>
+  <div class="big-lines shape5"></div>
+  <div class="big-lines2 shape6"></div>
+  <div class="big-lines shape7"></div>
+  <div class="big-lines shape8"></div>
+  <div class="big-lines shape9"></div>
+  <div class="big-lines shape10"></div>
+  <div class="big-lines shape11"></div>
+  <div class="big-lines shape12"></div>
+  <div class="big-lines shape13"></div>
+  <div class="big-lines shape14"></div> {% endcomment %}
+  
+
+  <script>
+
+  </script>
+
+</body>
+</html>
